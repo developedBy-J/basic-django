@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo building'
+                sh 'pip3 install -r requirements.txr'
             }
         }
         stage('Test') {
             steps {
-                echo 'testing'
+                sh 'python3 manage.py test'
             }
         }
         stage('Deploy') {
