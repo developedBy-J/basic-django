@@ -13,7 +13,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'ssh -o StrictHostKeyChecking=no deployment-user@192.168.56.101 \
+                sh 'sshpass -p akash_123 ssh -o StrictHostKeyChecking=no deployment-user@192.168.56
+                .101 \
                 "source my-venv/bin/activate;\
                 cd basic-django;\
                 git pull origin main;\
